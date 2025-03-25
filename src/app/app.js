@@ -5,6 +5,7 @@ const config = require("../config");
 
 const app = express();
 
+const auth = require("../routes/auth.routes");
 const roles = require("../routes/rol.routes");
 const users = require("../routes/user.routes");
 
@@ -19,5 +20,6 @@ app.set('port',config.app.port);
 //Rutas
 app.use("/api/rol", roles);
 app.use("/api/user", users);
+app.use("/api/auth", auth);
 
 module.exports = app;
